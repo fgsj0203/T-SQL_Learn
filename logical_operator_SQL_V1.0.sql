@@ -27,3 +27,8 @@ SELECT *
 FROM SalesLT.[Product] as sp
 WHERE sp.ListPrice > 100 AND sp.ListPrice < 500
 ORDER BY sp.[Name] ASC
+
+-- Exercise 05: return products if not 'Black' and 'White'
+SELECT *
+FROM SalesLT.[Product] as sp
+WHERE sp.Color NOT IN ('White', 'Black')
