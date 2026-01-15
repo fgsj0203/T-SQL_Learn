@@ -98,3 +98,8 @@ ORDER BY sp.[Name] ASC
 SELECT *
 FROM SalesLT.SalesOrderHeader as ssoh
 WHERE ssoh.TotalDue > 10000
+
+-- Exercise 20: return all products if is not color "Silver"
+SELECT *
+FROM SalesLT.[Product] as sp
+WHERE sp.Color != 'Silver'
