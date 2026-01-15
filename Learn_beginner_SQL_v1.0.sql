@@ -93,3 +93,8 @@ SELECT sp.[Name] as 'Nome do produto', sp.[Weight] as 'Peso do produto'
 FROM SalesLT.[Product] as sp
 WHERE sp.[Weight] > 1000
 ORDER BY sp.[Name] ASC
+
+-- Exercise 19: return sales with value "TotalDue" is bigger 10000
+SELECT *
+FROM SalesLT.SalesOrderHeader as ssoh
+WHERE ssoh.TotalDue > 10000
