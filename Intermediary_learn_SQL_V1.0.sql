@@ -35,3 +35,8 @@ where ssoh.TotalDue BETWEEN 5000 AND 20000
 SELECT *
 FROM SalesLT.[Product] as sp
 WHERE sp.ProductNumber LIKE 'BK-%'
+
+-- Exercise 07: Localize enderecos que estao na cidade de 'Toronto'. / Return all address of in city 'Toronto'
+SELECT *
+FROM SalesLT.[Address] as sa
+WHERE sa.City = 'Toronto'
