@@ -107,3 +107,11 @@ FROM SalesLT.SalesOrderDetail as ssod
 WHERE ssod.OrderQty > 20
 
 
+/*
+Joins and relationship tables
+Date: 23-01-2026, in format Brazil
+*/
+
+-- Exercise 21: Liste o nome do cliente e o numero do pedido (SalesOrderNumber) correspondente. / Return name customer and number order correspondent
+SELECT sc.FirstName + ' ' + sc.MiddleName as 'Nome completo', ssoh.SalesOrderNumber as 'Numero do pedido'
+FROM SalesLT.Customer as sc INNER JOIN SalesLT.SalesOrderHeader as ssoh ON sc.CustomerID = ssoh.CustomerID
