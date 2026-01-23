@@ -86,12 +86,20 @@ SELECT *
 FROM SalesLT.[Address] as sa
 WHERE sa.StateProvince IN ('California')
 
+-- Exercise 17: Recupere pedidos feitos atraves de um numero de compra (PurchaseOrderNumber) especifico. / Return orders of realize with number of buy specific
+SELECT *
+FROM SalesLT.SalesOrderHeader as ssoh
+WHERE ssoh.PurchaseOrderNumber = 'PO348186287'
 
+-- Exercise 18: Filtre produtos que ainda estao em linha de producao (sem SellEndDate). / Return producst of not have SellEndDate
+SELECT *
+FROM SalesLT.[Product] as sp
+WHERE sp.SellEndDate IS NULL
 
-
-
-
-
+-- Exercise 19: Mostre clientes que possuem a palavra 'Bike' no nome da empresa. / Return customers of have word 'Bike' in name company
+SELECT *
+FROM SalesLT.[Customer] as sc
+WHERE sc.CompanyName LIKE '%Bike%'
 
 
 
