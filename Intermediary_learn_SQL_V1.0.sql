@@ -101,6 +101,9 @@ SELECT *
 FROM SalesLT.[Customer] as sc
 WHERE sc.CompanyName LIKE '%Bike%'
 
-
+-- Exercise 20: Selecione vendas onde a quantidade pedida (OrderQty) seja maior que 20 unidades. / Return sales in amount is lost bigger 20 units
+SELECT *
+FROM SalesLT.SalesOrderDetail as ssod
+WHERE ssod.OrderQty > 20
 
 
