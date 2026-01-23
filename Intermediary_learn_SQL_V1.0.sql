@@ -40,3 +40,8 @@ WHERE sp.ProductNumber LIKE 'BK-%'
 SELECT *
 FROM SalesLT.[Address] as sa
 WHERE sa.City = 'Toronto'
+
+-- Exercise 08: Selecione modelos de produtos (ProductModel) que contenham a palavra 'Mountain' no nome. / Return models of product of contain word 'Mountain' in name
+SELECT *
+FROM SalesLT.[ProductModel] as spm
+WHERE spm.[Name] LIKE '%Mountain%'
