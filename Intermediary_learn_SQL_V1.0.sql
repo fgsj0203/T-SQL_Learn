@@ -31,3 +31,7 @@ SELECT *
 FROM SalesLT.SalesOrderHeader as ssoh
 where ssoh.TotalDue BETWEEN 5000 AND 20000
 
+-- Exercise 06: Mostre produtos cujo ProductNumber comece com 'BK-'. / Return products of ProductNumber is start 'BK-'
+SELECT *
+FROM SalesLT.[Product] as sp
+WHERE sp.ProductNumber LIKE 'BK-%'
