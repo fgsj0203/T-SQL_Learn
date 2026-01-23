@@ -123,3 +123,21 @@ FROM SalesLT.[Product] as sp INNER JOIN SalesLT.[ProductCategory] as spc ON sp.P
 -- Exercise 23: Relacione o endereco de entrega (ShipToAddressID) com a tabela de enderecos para mostrar a cidade de cada pedido. / Return address ship and table address for display city order
 SELECT * 
 FROM SalesLT.[Address] as sa INNER JOIN SalesLT.SalesOrderHeader as ssoh ON sa.AddressID = ssoh.ShipToAddressID
+
+-- Exercise 24: Liste todos os produtos e os nomes de seus modelos (ProductModel). / Return all products and names models product
+SELECT *
+FROM SalesLT.[Product] as sp INNER JOIN SalesLT.ProductModel as spm ON sp.ProductModelID = spm.ProductModelID
+
+-- Exercise 25: Gere um relatorio com o nome do cliente e o valor total gasto por ele. / Generate report with name customer and value total in month
+SELECT sc.[FirstName] as 'Nome', ssoh.TotalDue as 'Gasto total'
+FROM SalesLT.Customer as sc INNER JOIN SalesLT.SalesOrderHeader ssoh ON sc.CustomerID = ssoh.CustomerID
+
+-- Exercise 26: Mostre os itens de um pedido (SalesOrderDetail) junto com o nome do produto vendido. / Return Order with name product sales
+SELECT sp.[Name] as 'Nome do produto', ssod.SalesOrderDetailID as 'ID do pedido'
+FROM SalesLT.SalesOrderDetail as ssod INNER JOIN SalesLT.[Product] as sp ON ssod.ProductID = sp.ProductID
+
+-- Exercise 27: Liste clientes e seus respectivos endereços (usando CustomerAddress e Address). / Return customer and address respectives
+SELECT *
+FROM SalesLT.Customer as sc INNER JOIN SalesLT.[Address] as sa ON sc.CustomerID = sa.AddressID
+
+-- Exercise 28: 
