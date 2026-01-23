@@ -45,3 +45,54 @@ WHERE sa.City = 'Toronto'
 SELECT *
 FROM SalesLT.[ProductModel] as spm
 WHERE spm.[Name] LIKE '%Mountain%'
+
+-- Exercise 09: Liste vendas que nao tiveram desconto aplicado (UnitPriceDiscount = 0). / Return orders of not have discount in price
+SELECT *
+FROM SalesLT.SalesOrderDetail as ssod
+WHERE ssod.UnitPriceDiscount = 0
+
+-- Exercise 10: Recupere clientes que tem o titulo 'Ms.' ou 'Mrs.'. / Return customers of title contain "Ms." or "Mrs."
+SELECT *
+FROM SalesLT.Customer as sc
+WHERE sc.Title = 'Ms.' OR sc.Title = 'Mrs.' 
+
+-- Exercise 11: Filtre produtos que possuem uma data de termino de venda (SellEndDate) definida. / Filter product of have date of end sales definied
+SELECT *
+FROM SalesLT.[Product] as sp
+WHERE sp.SellEndDate IS NOT NULL
+
+-- Exercise 12: Mostre pedidos com status 'Shipped' (Status = 5). / Return orders with status = 5
+SELECT *
+FROM SalesLT.[SalesOrderHeader] as ssoh
+WHERE ssoh.[Status] = 5
+
+-- Exercise 13: Liste categorias de produtos que nao possuem uma categoria pai (ParentProductCategoryID e nulo). / Return categories of product of not have father categorie
+SELECT *
+FROM SalesLT.ProductCategory as spc
+WHERE spc.ParentProductCategoryID IS NULL
+
+-- Exercise 14: Selecione clientes cujo dominio de e-mail termina em '@adventure-works.com'. / Return customers of domain email finished in '@adventure-works.com'
+SELECT *
+FROM SalesLT.Customer as sc
+WHERE sc.EmailAddress LIKE '%adventure-works.com'
+
+-- Exercise 15: Localize produtos com StandardCost menor que $50 mas ListPrice maior que $100. / Return products if StandardCost is smaller $50 but ListPrice is bigger $100
+SELECT *
+FROM SalesLT.[Product] as sp
+WHERE sp.StandardCost < 50 AND sp.ListPrice > 100
+
+-- Exercise 16: Liste enderecos que pertencem ao estado ('StateProvince') de 'California'. / Return address of belongs in StateProvince = 'California'
+SELECT *
+FROM SalesLT.[Address] as sa
+WHERE sa.StateProvince IN ('California')
+
+
+
+
+
+
+
+
+
+
+
