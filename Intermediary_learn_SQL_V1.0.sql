@@ -140,4 +140,6 @@ FROM SalesLT.SalesOrderDetail as ssod INNER JOIN SalesLT.[Product] as sp ON ssod
 SELECT *
 FROM SalesLT.Customer as sc INNER JOIN SalesLT.[Address] as sa ON sc.CustomerID = sa.AddressID
 
--- Exercise 28: 
+-- Exercise 28: Exiba a hierarquia: Nome da Categoria e Nome da Categoria Pai. / Return name category and category father
+SELECT spc.ParentProductCategoryID as 'Categoria pai', sp.[Name] as 'Nome da categoria'
+FROM SalesLT.ProductCategory as spc INNER JOIN SalesLT.[Product] as sp ON spc.ProductCategoryID = sp.ProductCategoryID
