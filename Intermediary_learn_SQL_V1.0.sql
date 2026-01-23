@@ -143,3 +143,10 @@ FROM SalesLT.Customer as sc INNER JOIN SalesLT.[Address] as sa ON sc.CustomerID 
 -- Exercise 28: Exiba a hierarquia: Nome da Categoria e Nome da Categoria Pai. / Return name category and category father
 SELECT spc.ParentProductCategoryID as 'Categoria pai', sp.[Name] as 'Nome da categoria'
 FROM SalesLT.ProductCategory as spc INNER JOIN SalesLT.[Product] as sp ON spc.ProductCategoryID = sp.ProductCategoryID
+
+-- Exercise 29: Liste pedidos e o metodo de envio (se disponivel) ou endereco de cobranca. / Return orders and method about ship in address
+SELECT ssoh.ShipMethod as 'Metodo de envio', ssod.SalesOrderID as 'ID dos pedidos de venda'
+FROM SalesLT.SalesOrderHeader as ssoh INNER JOIN SalesLT.SalesOrderDetail as ssod ON ssoh.SalesOrderID = ssod.SalesOrderID
+
+
+
