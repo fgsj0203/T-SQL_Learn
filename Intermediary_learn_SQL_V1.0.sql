@@ -119,3 +119,7 @@ FROM SalesLT.Customer as sc INNER JOIN SalesLT.SalesOrderHeader as ssoh ON sc.Cu
 -- Exercise 22: Mostre o nome do produto e o nome da sua categoria (ProductCategory).
 SELECT sp.[Name] as 'Nome do produto', spc.[Name] as 'Categoria do produto'
 FROM SalesLT.[Product] as sp INNER JOIN SalesLT.[ProductCategory] as spc ON sp.ProductCategoryID = spc.ProductCategoryID
+
+-- Exercise 23: Relacione o endereco de entrega (ShipToAddressID) com a tabela de enderecos para mostrar a cidade de cada pedido. / Return address ship and table address for display city order
+SELECT * 
+FROM SalesLT.[Address] as sa INNER JOIN SalesLT.SalesOrderHeader as ssoh ON sa.AddressID = ssoh.ShipToAddressID
