@@ -26,4 +26,8 @@ SELECT *
 FROM SalesLT.Customer as sc
 WHERE sc.Phone IS NULL
 
+-- Exercise 05: Liste pedidos (SalesOrderHeader) onde o valor total (TotalDue) seja entre $5.000 e $20.000. / Return orders with value total in range 5.000 and 20.000
+SELECT *
+FROM SalesLT.SalesOrderHeader as ssoh
+where ssoh.TotalDue BETWEEN 5000 AND 20000
 
