@@ -115,3 +115,7 @@ Date: 23-01-2026, in format Brazil
 -- Exercise 21: Liste o nome do cliente e o numero do pedido (SalesOrderNumber) correspondente. / Return name customer and number order correspondent
 SELECT sc.FirstName + ' ' + sc.MiddleName as 'Nome completo', ssoh.SalesOrderNumber as 'Numero do pedido'
 FROM SalesLT.Customer as sc INNER JOIN SalesLT.SalesOrderHeader as ssoh ON sc.CustomerID = ssoh.CustomerID
+
+-- Exercise 22: Mostre o nome do produto e o nome da sua categoria (ProductCategory).
+SELECT sp.[Name] as 'Nome do produto', spc.[Name] as 'Categoria do produto'
+FROM SalesLT.[Product] as sp INNER JOIN SalesLT.[ProductCategory] as spc ON sp.ProductCategoryID = spc.ProductCategoryID
