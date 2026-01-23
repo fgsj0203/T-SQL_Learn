@@ -148,5 +148,19 @@ FROM SalesLT.ProductCategory as spc INNER JOIN SalesLT.[Product] as sp ON spc.Pr
 SELECT ssoh.ShipMethod as 'Metodo de envio', ssod.SalesOrderID as 'ID dos pedidos de venda'
 FROM SalesLT.SalesOrderHeader as ssoh INNER JOIN SalesLT.SalesOrderDetail as ssod ON ssoh.SalesOrderID = ssod.SalesOrderID
 
+-- Exercise 30: Mostre o total de itens vendidos por categoria de produto. / Return total of itens sales for category product
+SElECT COUNT(spc.[Name]) as 'Quantidade de produtos', spc.[Name] as 'Nome da categoria'
+FROM SalesLT.[Product] as sp INNER JOIN SalesLT.ProductCategory as spc ON sp.ProductCategoryID = spc.ProductCategoryID
+GROUP BY spc.[Name]
 
+-- Exercise 31: Liste pedidos feitos por clientes que moram no Canada. / Return orders with customers of living in Canada
+SELECT *
+FROM SalesLT.SalesOrderHeader as ssoh INNER JOIN SalesLT.CustomerAddress as sca ON ssoh.CustomerID = sca.CustomerID
+     INNER JOIN SalesLT.[Address] as sa ON sa.AddressID = sca.AddressID
+WHERE sa.City = 'Canada'
 
+-- Exercise 32: Exiba o nome do cliente e o detalhe do produto mais caro que ele comprou. / Return name of customer and details of product is bigger price
+SELECT TOP 1 sp.[Name] as 'Nome do produto', sc.FirstName + ' ' + sc.MiddleName as 'Nome completo'
+FROM SalesLT.Customer as sc INNER JOIN SalesLT.[Product] as sp ON sc.CustomerID = sp.ProductID
+ORDER BY sp.ListPrice DESC
+-- In development
