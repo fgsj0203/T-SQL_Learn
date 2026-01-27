@@ -190,3 +190,7 @@ Date: 27-01-2026, in format Brazil
 -- Exercise 01: Concatene o FirstName e LastName para criar o nome completo. / Concatenate Firstname with Lastname and former Name complete
 SELECT c.FirstName + ' ' + c.LastName as 'Nome completo'
 FROM SalesLT.Customer as c
+
+-- Exercise 02: Transforme todos os nomes de empresas para letras maiúsculas. / Transform names of companies in mode Upper Case
+SELECT UPPER (c.CompanyName) as 'Nome Empresa'
+FROM SalesLT.Customer as c
