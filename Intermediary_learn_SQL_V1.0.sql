@@ -191,6 +191,12 @@ Date: 27-01-2026, in format Brazil
 SELECT c.FirstName + ' ' + c.LastName as 'Nome completo'
 FROM SalesLT.Customer as c
 
--- Exercise 02: Transforme todos os nomes de empresas para letras maiúsculas. / Transform names of companies in mode Upper Case
+-- Exercise 02: Transforme todos os nomes de empresas para letras maiusculas. / Transform names of companies in mode Upper Case
 SELECT UPPER (c.CompanyName) as 'Nome Empresa'
 FROM SalesLT.Customer as c
+
+-- Exercise 03: Extraia os primeiros 3 caracteres do ProductNumber. / Extract a third characters of column 'ProductNumber'
+SELECT LEFT(p.ProductNumber, 3) as 'Parte do numero do produto'
+FROM SalesLT.[Product] as p
+
+-- Exercise 04: 
