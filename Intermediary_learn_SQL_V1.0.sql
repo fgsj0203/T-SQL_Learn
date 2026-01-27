@@ -199,4 +199,6 @@ FROM SalesLT.Customer as c
 SELECT LEFT(p.ProductNumber, 3) as 'Parte do numero do produto'
 FROM SalesLT.[Product] as p
 
--- Exercise 04: 
+-- Exercise 04: Substitua o sufixo 'Road' por 'Rd.' nos enderecos. / Replace sufix 'Road' for 'Rd' in address
+SELECT  REPLACE ('Road','ad','rd')
+FROM SalesLT.[Address] as a
