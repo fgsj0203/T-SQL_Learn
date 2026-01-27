@@ -175,3 +175,8 @@ SELECT sa.AddressLine1 as 'Endereco principal', sca.AddressType as 'Tipo enderec
 FROM SalesLT.Customer as sc INNER JOIN SalesLT.CustomerAddress as sca ON sc.CustomerID = sca.CustomerID
      INNER JOIN SalesLT.[Address] as sa ON sa.AddressID = sca.AddressID
 WHERE sca.AddressType = 'Main Office'
+
+-- Exercise 35: Gere uma lista de modelos de produtos que nao tem descricao associada. / Return list of models is not have description
+SELECT *
+FROM SalesLT.ProductModelProductDescription as pmpd RIGHT JOIN SalesLT.ProductModel as pm ON pmpd.ProductModelID = pm.ProductModelID
+WHERE pm.CatalogDescription IS NULL
