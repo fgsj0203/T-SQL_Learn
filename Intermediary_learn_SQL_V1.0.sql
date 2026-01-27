@@ -169,3 +169,9 @@ SELECT TOP 1 sc.FirstName + ' ' + sc.LastName as 'Nome completo', ssod.UnitPrice
 FROM SalesLT.Customer as sc INNER JOIN SalesLT.SalesOrderHeader as ssoh ON sc.CustomerID = ssoh.CustomerID
      INNER JOIN SalesLT.SalesOrderDetail as ssod ON ssod.SalesOrderID = ssoh.SalesOrderID
 ORDER BY ssod.UnitPrice DESC
+
+-- Exercise 34: Liste enderecos de clientes que possuem o tipo de endereco 'Main Office'. / Return address of customers have address type 'Main office'
+SELECT sa.AddressLine1 as 'Endereco principal', sca.AddressType as 'Tipo endereco'
+FROM SalesLT.Customer as sc INNER JOIN SalesLT.CustomerAddress as sca ON sc.CustomerID = sca.CustomerID
+     INNER JOIN SalesLT.[Address] as sa ON sa.AddressID = sca.AddressID
+WHERE sca.AddressType = 'Main Office'
