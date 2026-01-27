@@ -180,3 +180,13 @@ WHERE sca.AddressType = 'Main Office'
 SELECT *
 FROM SalesLT.ProductModelProductDescription as pmpd RIGHT JOIN SalesLT.ProductModel as pm ON pmpd.ProductModelID = pm.ProductModelID
 WHERE pm.CatalogDescription IS NULL
+
+
+/*
+Manipulation Strings
+Date: 27-01-2026, in format Brazil
+*/
+
+-- Exercise 01: Concatene o FirstName e LastName para criar o nome completo. / Concatenate Firstname with Lastname and former Name complete
+SELECT c.FirstName + ' ' + c.LastName as 'Nome completo'
+FROM SalesLT.Customer as c
