@@ -159,8 +159,7 @@ FROM SalesLT.SalesOrderHeader as ssoh INNER JOIN SalesLT.CustomerAddress as sca 
      INNER JOIN SalesLT.[Address] as sa ON sa.AddressID = sca.AddressID
 WHERE sa.City = 'Canada'
 
--- Exercise 32: Exiba o nome do cliente e o detalhe do produto mais caro que ele comprou. / Return name of customer and details of product is bigger price
-SELECT TOP 1 sp.[Name] as 'Nome do produto', sc.FirstName + ' ' + sc.MiddleName as 'Nome completo'
-FROM SalesLT.Customer as sc INNER JOIN SalesLT.[Product] as sp ON sc.CustomerID = sp.ProductID
-ORDER BY sp.ListPrice DESC
--- In development
+-- Exercise 32: Liste o nome do produto, categoria e descricao / Return list of name product, category and description Product
+SELECT sp.[Name] as 'Nome do produto', spc.Name as 'Categoria do produto', spd.[Description] as 'Descricao do produto'
+FROM SalesLT.[Product] as sp INNER JOIN SalesLT.ProductCategory as spc ON sp.ProductCategoryID = spc.ProductCategoryID
+     INNER JOIN SalesLT.ProductDescription as spd ON spc.ProductCategoryID = spd.ProductDescriptionID
