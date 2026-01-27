@@ -163,3 +163,9 @@ WHERE sa.City = 'Canada'
 SELECT sp.[Name] as 'Nome do produto', spc.Name as 'Categoria do produto', spd.[Description] as 'Descricao do produto'
 FROM SalesLT.[Product] as sp INNER JOIN SalesLT.ProductCategory as spc ON sp.ProductCategoryID = spc.ProductCategoryID
      INNER JOIN SalesLT.ProductDescription as spd ON spc.ProductCategoryID = spd.ProductDescriptionID
+
+-- Exercise 33: Exiba o nome do cliente e o detalhe do produto mais caro que ele comprou. / Return customer and details of product with bigger price 
+SELECT TOP 1 sc.FirstName + ' ' + sc.LastName as 'Nome completo', ssod.UnitPrice as 'Preco unitario'
+FROM SalesLT.Customer as sc INNER JOIN SalesLT.SalesOrderHeader as ssoh ON sc.CustomerID = ssoh.CustomerID
+     INNER JOIN SalesLT.SalesOrderDetail as ssod ON ssod.SalesOrderID = ssoh.SalesOrderID
+ORDER BY ssod.UnitPrice DESC
