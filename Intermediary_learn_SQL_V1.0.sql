@@ -207,3 +207,7 @@ FROM SalesLT.[Address] as a
 -- Exercise 05: Localize a posicao do caractere '-' no ProductNumber. / Tracking position of character '-' in column ProductNumber
 SELECT CHARINDEX('-', p.ProductNumber) as 'Posicao do caracter (-)'
 FROM SalesLT.[Product] as p
+
+-- Exercise 06: Crie um "Nickname" para o produto usando as 2 primeiras letras do nome e as 2 ultimas. / Return "NickName" for product with first 2 letters and 2 last letters
+SELECT LEFT (p.[Name], 2) + ' ' + RIGHT (p.[Name], 2) as 'Nickname - apelido'
+FROM SalesLT.[Product] as p
