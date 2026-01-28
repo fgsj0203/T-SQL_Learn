@@ -202,3 +202,8 @@ FROM SalesLT.[Product] as p
 -- Exercise 04: Substitua o sufixo 'Road' por 'Rd.' nos enderecos. / Replace sufix 'Road' for 'Rd' in address
 SELECT  REPLACE ('Road','ad','rd')
 FROM SalesLT.[Address] as a
+
+
+-- Exercise 05: Localize a posicao do caractere '-' no ProductNumber. / Tracking position of character '-' in column ProductNumber
+SELECT CHARINDEX('-', p.ProductNumber) as 'Posicao do caracter (-)'
+FROM SalesLT.[Product] as p
