@@ -211,3 +211,9 @@ FROM SalesLT.[Product] as p
 -- Exercise 06: Crie um "Nickname" para o produto usando as 2 primeiras letras do nome e as 2 ultimas. / Return "NickName" for product with first 2 letters and 2 last letters
 SELECT LEFT (p.[Name], 2) + ' ' + RIGHT (p.[Name], 2) as 'Nickname - apelido'
 FROM SalesLT.[Product] as p
+
+-- Exercise 07: Verifique se o e-mail do cliente contem o caractere '@'. / Verify if e-mail customer exists '@'
+SELECT *
+FROM SalesLT.Customer as c
+WHERE c.EmailAddress LIKE '%@%'
+
