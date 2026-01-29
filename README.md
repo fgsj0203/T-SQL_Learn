@@ -17,3 +17,10 @@ A fonte utilizada foi uma lista gerada pela IA Gemini, o prompt em questão foi 
 
 > [!IMPORTANT]
 > Utilize a IA sendo sincero a sua pessoa, não a utilize na primeira dificuldade, destine minutos e "estresse sua mente" no bom sentido, para forçar sua mente a aprender, um dos exemplos foi utilizar a IA para gerar exercícios para a prática.
+
+#### Assuntos abordados nos exercícios
+- Filtros e lógica de seleção
+- Joins e relacionamentos
+- Manipulação de Strings
+- Operações matemáticas e financeiras
+- Operações com datas
