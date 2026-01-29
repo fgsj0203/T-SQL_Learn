@@ -225,3 +225,12 @@ ORDER BY pm.[Name] ASC
 -- Exercise 09: Gere um codigo de barras ficticio: ProductID + Color. / Generate fake code using: ProductID + Color
 SELECT p.ProductID, p.Color, CAST(p.ProductID AS VARCHAR) + ISNULL (p.Color, 'N/A') as 'Code Bar'
 FROM SalesLT.[Product] as p
+
+/*
+Operation Maths
+Date: 29-01-2026, in format Brazil
+*/
+
+-- Exercise 01: Calcule a margem de lucro bruta unitaria por produto (ListPrice - StandardCost). / Return edge brute unit price of product
+SELECT p.[Name] as 'Nome do produto', (p.StandardCost - p.ListPrice) as 'Margem bruta de preco unitario'
+FROM SalesLT.[Product] as p
