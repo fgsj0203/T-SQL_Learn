@@ -234,3 +234,7 @@ Date: 29-01-2026, in format Brazil
 -- Exercise 01: Calcule a margem de lucro bruta unitaria por produto (ListPrice - StandardCost). / Return edge brute unit price of product
 SELECT p.[Name] as 'Nome do produto', (p.StandardCost - p.ListPrice) as 'Margem bruta de preco unitario'
 FROM SalesLT.[Product] as p
+
+-- Exercise 02: Aplique um reajuste de 10% em todos os preços de tabela. / Inserting readjustment of 10% in all price products
+SELECT p.ListPrice as 'Preco original', p.ListPrice + (p.ListPrice * 0.10) as 'Preco com Reajuste de 10%'
+FROM SalesLT.[Product] as p
