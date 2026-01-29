@@ -252,3 +252,9 @@ GROUP BY c.CustomerID
 -- Exercise 05: Calcule a diferenca entre o preco sugerido (ListPrice) e o preco vendido (UnitPrice). / Calculate difference between (ListPrice) and (UnitPrice)
 SELECT p.ListPrice as 'Preco original sugerido', sod.UnitPrice as 'Preco vendido', p.ListPrice - sod.UnitPrice as 'Diferenca entre preco sugerido e vendido'
 FROM SalesLT.[Product] as p INNER JOIN SalesLT.SalesOrderDetail as sod ON p.ProductID = sod.ProductID 
+
+-- Exercise 06: Determine o maior e o menor preco de venda por categoria. / Return a bigger and smaller price of sales based in category
+SELECT MAX(sod.UnitPrice) as 'Maior preco', MIN(sod.UnitPrice) as 'Menor preco', pc.[Name] as 'Categoria produto'
+FROM SalesLT.SalesOrderDetail as sod INNER JOIN SalesLT.[Product] as p ON sod.ProductID = p.ProductID
+     INNER JOIN SalesLT.ProductCategory as pc ON p.ProductCategoryID = pc.ProductCategoryID
+GROUP BY pc.[Name]
