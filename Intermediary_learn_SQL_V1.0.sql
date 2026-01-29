@@ -238,3 +238,7 @@ FROM SalesLT.[Product] as p
 -- Exercise 02: Aplique um reajuste de 10% em todos os preços de tabela. / Inserting readjustment of 10% in all price products
 SELECT p.ListPrice as 'Preco original', p.ListPrice + (p.ListPrice * 0.10) as 'Preco com Reajuste de 10%'
 FROM SalesLT.[Product] as p
+
+-- Exercise 03: Calcule o peso total de um pedido (Quantidade x Peso do produto). / Calculate weight total of order (Amount * weight product)
+SELECT sod.OrderQty * p.[Weight] as 'Peso total do pedido'
+FROM SalesLT.SalesOrderDetail as sod INNER JOIN SalesLT.[Product] as p ON sod.ProductID = p.ProductID
