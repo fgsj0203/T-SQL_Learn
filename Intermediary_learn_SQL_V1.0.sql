@@ -1,5 +1,5 @@
 /*
-Author: Francisco
+Author: Francisco Gomes da Silva Junior
 College: Universidade Estacio de Sa
 Course: Ciencia da Computacao
 Date: 22-01-2026, in format Brazil
