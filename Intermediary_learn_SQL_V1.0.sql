@@ -217,3 +217,11 @@ SELECT *
 FROM SalesLT.Customer as c
 WHERE c.EmailAddress LIKE '%@%'
 
+-- Exercise 08: Inverta a string do nome do modelo do produto (para fins de codificacao). / Inverter String of name model product
+SELECT REVERSE (pm.[Name]) as 'Nome invertido do Modelo'
+FROM SalesLT.ProductModel as pm
+ORDER BY pm.[Name] ASC
+
+-- Exercise 09: Gere um codigo de barras ficticio: ProductID + Color. / Generate fake code using: ProductID + Color
+SELECT p.ProductID, p.Color, CAST(p.ProductID AS VARCHAR) + ISNULL (p.Color, 'N/A') as 'Code Bar'
+FROM SalesLT.[Product] as p
