@@ -242,3 +242,13 @@ FROM SalesLT.[Product] as p
 -- Exercise 03: Calcule o peso total de um pedido (Quantidade x Peso do produto). / Calculate weight total of order (Amount * weight product)
 SELECT sod.OrderQty * p.[Weight] as 'Peso total do pedido'
 FROM SalesLT.SalesOrderDetail as sod INNER JOIN SalesLT.[Product] as p ON sod.ProductID = p.ProductID
+
+-- Exercise 04: Descubra qual o valor medio das vendas por cliente. / Return value average of sales customer 
+SELECT AVG(soh.TotalDue) as 'Media do valor' , COUNT(*) as 'Quantidade por cliente'
+FROM SalesLT.SalesOrderHeader as soh INNER JOIN SalesLT.Customer as c ON soh.CustomerID = c.CustomerID
+GROUP BY c.CustomerID
+-- (!!! Fix in development / Solucao em desenvolvimento !!!) 
+
+-- Exercise 05: Calcule a diferenca entre o preco sugerido (ListPrice) e o preco vendido (UnitPrice). / Calculate difference between (ListPrice) and (UnitPrice)
+SELECT p.ListPrice as 'Preco original sugerido', sod.UnitPrice as 'Preco vendido', p.ListPrice - sod.UnitPrice as 'Diferenca entre preco sugerido e vendido'
+FROM SalesLT.[Product] as p INNER JOIN SalesLT.SalesOrderDetail as sod ON p.ProductID = sod.ProductID 
